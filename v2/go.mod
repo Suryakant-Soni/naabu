@@ -21,7 +21,7 @@ require (
 	github.com/projectdiscovery/networkpolicy v0.0.6
 	github.com/projectdiscovery/ratelimit v0.0.8
 	github.com/projectdiscovery/retryablehttp-go v1.0.17
-	github.com/projectdiscovery/uncover v1.0.4
+	github.com/projectdiscovery/uncover v1.0.5
 	github.com/projectdiscovery/utils v0.0.37
 	github.com/remeh/sizedwaitgroup v1.0.0
 	github.com/stretchr/testify v1.8.4
