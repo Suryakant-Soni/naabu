@@ -6,7 +6,6 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"log"
 	"math/big"
 	"net"
 	"net/http"
@@ -573,11 +572,9 @@ func (r *Runner) canIScanIfCDN(host string, port *port.Port) bool {
 		return true
 	}
 
-	log.Println("cds provider", cdnProvider)
 	// if extended exclusion is flagged, will check for cds-specific extended list of ports like cloudfare
 	if !r.options.ExcludeCDNExt {
 		if cdnProvider == "cloudflare" {
-			log.Println("entered new if")
 			return port.Port == 2052 || port.Port == 2053 || port.Port == 2082 || port.Port == 2083 || port.Port == 2086 || port.Port == 2087 || port.Port == 2095 || port.Port == 2096 || port.Port == 443 || port.Port == 80 || port.Port == 8080 || port.Port == 8443 || port.Port == 8880
 		}
 	}
