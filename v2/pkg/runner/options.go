@@ -27,6 +27,7 @@ type Options struct {
 	Ping           bool // Ping uses ping probes to discover fastest active host and discover dead hosts
 	Debug          bool // Prints out debug information
 	ExcludeCDN     bool // Excludes ip of knows CDN ranges for full port scan
+	ExcludeCDNExt  bool // Checks for extended list of ports but skips full port scan for CDNs
 	Nmap           bool // Invoke nmap detailed scan on results
 	InterfacesList bool // InterfacesList show interfaces list
 
@@ -120,6 +121,7 @@ func ParseOptions() *Options {
 		flagSet.StringVarP(&options.PortsFile, "pf", "ports-file", "", "list of ports to scan (file)"),
 		flagSet.IntVarP(&options.PortThreshold, "pts", "port-threshold", 0, "port threshold to skip port scan for the host"),
 		flagSet.BoolVarP(&options.ExcludeCDN, "ec", "exclude-cdn", false, "skip full port scans for CDN's (only checks for 80,443)"),
+		flagSet.BoolVarP(&options.ExcludeCDNExt, "ece", "exclude-cdn-extended", false, "Checks for extended list of ports but skips full port scan for CDNs"),
 		flagSet.BoolVarP(&options.OutputCDN, "cdn", "display-cdn", false, "display cdn in use"),
 	)
 

@@ -185,7 +185,7 @@ func NewScanner(options *Options) (*Scanner, error) {
 
 	scanner.HostDiscoveryResults = result.NewResult()
 	scanner.ScanResults = result.NewResult()
-	if options.ExcludeCdn || options.OutputCdn {
+	if options.ExcludeCdn || options.ExcludeCDNExt || options.OutputCdn {
 		scanner.cdn = cdncheck.New()
 	}
 

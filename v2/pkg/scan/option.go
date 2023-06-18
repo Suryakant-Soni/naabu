@@ -12,6 +12,7 @@ type Options struct {
 	PortThreshold int
 	Debug         bool
 	ExcludeCdn    bool
+	ExcludeCDNExt bool
 	OutputCdn     bool
 	ExcludedIps   []string
 	Proxy         string
